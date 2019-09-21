@@ -1,0 +1,15 @@
+{% extends 'groups/group_base.html' %}
+{% block pregroup %}
+<p><h1>{{group.name}}</h1></p>
+<p><h2>member count : {{group.members.count}}</h2></p>
+<p>{{group.description}}</p>
+{% if user in group.members.all %}
+<a href="{% url 'groups:leave' slug=group.slug %}" type="button" class="btn btn-warning">
+    <i class="fas fa-sign-out-alt"></i> leave
+</a>
+
+{% else %}
+
+<a href="{% url 'groups:join' slug=group.slug %}" type="button" class="btn btn-warning"><i class="fas fa-sign-out-alt"></i> 그룹 참여</a>
+{% endif %}
+{% endblock %}

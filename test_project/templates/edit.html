@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block main_block %}
+<form action = "/todos/{{todo.id}}/update" method='post'>
+  <div class="form-group">
+    <label for="title">title</label>
+    <input type="text" class="form-control" name = "title" id="title" placeholder="뷁" value="{{todo.title}}">
+  </div>
+  <div class="form-group">
+    <label for="content">content</label>
+    <input type="text" class="form-control" name = "content" id="content" placeholder="뷁" value="{{todo.content}}">
+  </div>
+  <div class="form-group">
+    <label for="deadline">deadline</label>
+    <input type="date" class="form-control" name = "deadline" id="deadline" placeholder="뷁" value="{{todo.deadline.strftime('%Y-%m-%d')}}">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+{% endblock %}

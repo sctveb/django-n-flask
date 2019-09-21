@@ -1,0 +1,20 @@
+{% extends 'posts/post_base.html' %}
+{% block prepost %}
+<div class="col-md-4">
+    {% if user.is_authenticated %}
+    <h2>반갑습니다 <a href="{% url 'posts:for_user' user.username %}">@{{user.username}}</a></h2>
+    {% endif %}
+    <p>여기는 포스트페이지입니다</p>
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'posts:create' %}" class="btn btn-warning"><i class="fas fa-plus"></i>create new post</a>
+        {% endif %}
+        </div>
+{% endblock %}
+{% block post_content %} 
+<div class="col-md-8">
+    {% for post in post_list %}
+    {% include 'posts/_post.html' %}
+    {% endfor %}
+</div>
+{% endblock %}

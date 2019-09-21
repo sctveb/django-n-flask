@@ -1,0 +1,8 @@
+{% extends 'todo/base.html' %}
+{% block body_block %}
+    <p>todo 인덱스임</p>
+    {% for todo in todos %}
+    <p>{{todo.title}} | {{todo.deadline}}</p>
+    <a href="/todos/{{todo.id}}/">글보기</a>
+    {% endfor %}
+{% endblock %}

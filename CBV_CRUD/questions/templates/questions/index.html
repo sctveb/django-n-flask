@@ -1,0 +1,6 @@
+{% extends 'questions/base.html' %}
+{% block body_block %}
+{% for question in question_list %}
+<p>{{question.title}} | {{question.answerA}} | {{question.answerB}} | <a href="{% url 'questions:update' pk=question.pk %}">수정</a> | <a href="{% url 'questions:delete' pk=question.pk %}">삭제</a></p>
+{% endfor %}
+{% endblock %}

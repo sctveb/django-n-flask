@@ -1,0 +1,10 @@
+{% extends 'question/base.html'%}
+{% block body_block %}
+
+{% load bootstrap_pagination %}
+
+{% for question in questions %}
+<p>{{question.title}} | <a href="{% url 'question:detail' id=question.id %}" class="btn btn-primary" role="button">글보기</a> <a href="{% url 'question:update' id=question.id %}" class="btn btn-primary" role="button">수정</a> <a href="{% url 'question:delete' id=question.id %}" class="btn btn-primary" role="button">삭제</a></p>
+{% endfor %}
+{% bootstrap_paginate questions range=5 show_first_last=True %}
+{% endblock %}

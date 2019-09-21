@@ -1,0 +1,4 @@
+{% extends 'todo/base.html' %}
+{% block body_block %}
+{{todo.title}} | {{todo.deadline}} | <a href="/todos/{{todo.id}}/update">수정</a> |<a href="{% url 'todo:update' id=todo.id %}">또다른수정 </a>| <a href="/todos/{{todo.id}}/delete">삭제</a>
+{% endblock %}

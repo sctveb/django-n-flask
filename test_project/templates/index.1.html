@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block main_block %}
+인덱스
+{% for todo in todos %}
+<p>{{todo.id}} | {{todo.title}} | {{todo.content}} | {{todo.deadline}}</p>
+{% endfor %}
+{% endblock %}
