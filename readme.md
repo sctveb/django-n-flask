@@ -1,4 +1,4 @@
-# django-learn
+# django-n-flask
 
 `딥러닝 기반의 데이터 분석` 과정 중 `python` 기반 웹 개발 관련 학습 내용을 정리한 내용입니다.
 
